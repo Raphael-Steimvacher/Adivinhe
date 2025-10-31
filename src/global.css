@@ -10,14 +10,12 @@
 
 body {
   background-color: #f5f5fa;
-
   font-family: "noto sans", serif;
-  font-optical-sizing: auto;
 }
 
-input {
+input,
+button {
   font-family: "noto sans", serif;
-  font-optical-sizing: auto;
 }
 
 button {
