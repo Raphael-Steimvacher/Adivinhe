@@ -15,12 +15,13 @@ export function App() {
         <Header current={5} max={10} onRestart={handleRestartGame} />
 
         <Tip tip="Liguagem de programação dinâmica" />
-
-        <Letter value="R" />
-        <Letter value="E" />
-        <Letter value="A" />
-        <Letter value="C" />
-        <Letter value="T" />
+        <div className={styles.word}>
+          <Letter value="R" />
+          <Letter value="E" />
+          <Letter value="A" />
+          <Letter value="C" />
+          <Letter value="T" />
+        </div>
       </main>
     </div>
   )
