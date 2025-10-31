@@ -15,6 +15,11 @@ body {
   font-optical-sizing: auto;
 }
 
+input {
+  font-family: "noto sans", serif;
+  font-optical-sizing: auto;
+}
+
 button {
   cursor: pointer;
   transition: filter 0.2s;
