@@ -10,10 +10,12 @@ import { Letter } from "./components/Letter"
 import { Input } from "./components/Input"
 import { Button } from "./components/Button"
 import { LettersUsed } from "./components/LettersUsed"
+import type { LettersUsedProps } from "./components/LettersUsed"
 
 export function App() {
   const [attempts, setAttempts] = useState(0)
   const [letter, setLetter] = useState("")
+  const [lettersUsed, setLettersUsed] = useState<LettersUsedProps[]>([])
   const [challenge, setChallenge] = useState<Challenge | null>(null)
 
   function handleRestartGame() {
@@ -56,7 +58,7 @@ export function App() {
           <Button title="Confirmar" />
         </div>
 
-        <LettersUsed />
+        <LettersUsed data={lettersUsed} />
       </main>
     </div>
   )
