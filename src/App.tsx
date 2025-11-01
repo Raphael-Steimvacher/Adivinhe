@@ -49,6 +49,7 @@ export function App() {
     )
 
     if (exists) {
+      setLetter("")
       return alert("você já utilizou a letra" + value)
     }
 
@@ -65,9 +66,30 @@ export function App() {
     setLetter("")
   }
 
+  function endGame(message: string) {
+    alert(message)
+    startGame()
+  }
+
   useEffect(() => {
     startGame()
   }, [])
+
+  useEffect(() => {
+    if (!challenge) {
+      return
+    }
+
+    setTimeout(() => {
+      if (score === challenge.word.length) {
+        return endGame("parabéns, você descobriu a palavra")
+      }
+      const attempts_limit = challenge.word.length + attempts_margin
+      if (lettersUsed.length === attempts_limit) {
+        return endGame("Que pena, você usou todas as tentativas!")
+      }
+    }, 200)
+  }, [score, lettersUsed.length])
 
   if (!challenge) {
     return
