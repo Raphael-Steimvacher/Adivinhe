@@ -12,6 +12,8 @@ import { Button } from "./components/Button"
 import { LettersUsed } from "./components/LettersUsed"
 import type { LettersUsedProps } from "./components/LettersUsed"
 
+const attempts_margin = 5
+
 export function App() {
   const [score, setScore] = useState(0)
   const [letter, setLetter] = useState("")
@@ -74,7 +76,11 @@ export function App() {
   return (
     <div className={styles.container}>
       <main>
-        <Header current={score} max={10} onRestart={handleRestartGame} />
+        <Header
+          current={lettersUsed.length}
+          max={challenge.word.length + attempts_margin}
+          onRestart={handleRestartGame}
+        />
 
         <Tip tip={challenge.tip} />
         <div className={styles.word}>
