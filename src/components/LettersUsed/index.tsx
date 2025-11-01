@@ -1,13 +1,17 @@
 import styles from "./styles.module.css"
 
-type Props = {
+import { Letter } from "../Letter"
 
-}
+type Props = {}
 
-export function LettersUsed({}:Props){
-  return(
-<div className={styles.lettersUsed}>
-  <h5>Letras Utilizadas</h5>
-</div>
+export function LettersUsed() {
+  return (
+    <div className={styles.lettersUsed}>
+      <h5>Letras Utilizadas</h5>
+      <div>
+        <Letter value="X" size="small" />
+        <Letter value="R" size="small"/>
+      </div>
+    </div>
   )
 }
